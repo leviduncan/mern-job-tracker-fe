@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
 const Register = () => {
+
+  const navigate = useNavigate()
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,11 +20,11 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      await axios.post('/api/auth/register', formData); // Replace '/api/auth/register' with your actual backend API endpoint
-      // Handle successful registration, e.g., redirect to login page
+      await axios.post('https://mern-job-tracker-be.cyclic.app/auth/register', formData);
+      navigate('/');
     } catch (error) {
       console.error(error);
-      // Handle registration error, e.g., display error message
+      alert('Something went wrong!')
     }
   };
 

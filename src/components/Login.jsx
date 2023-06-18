@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -15,8 +19,9 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      await axios.post('/api/auth/login', formData); // Replace '/api/auth/login' with your actual backend API endpoint
-      // Handle successful login, e.g., redirect to dashboard
+      await axios.post('https://mern-job-tracker-be.cyclic.app/auth/login', formData); 
+      navigate('/');
+      
     } catch (error) {
       console.error(error);
       // Handle login error, e.g., display error message

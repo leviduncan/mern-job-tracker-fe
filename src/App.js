@@ -6,6 +6,7 @@ import Dashboard from './components/Dashboard';
 import Navbar from './components/Navbar';
 import LandingPage from './pages/LandingPage';
 import JobSearchPage from './pages/JobSearchPage';
+import JobList from './components/JobList';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
           <Route exact path="/jobsearchpage" element={<JobSearchPage />} />
+          <Route exact path="/jobs" element={<JobList />} />
         </Routes>
       </div>
     </Router>
