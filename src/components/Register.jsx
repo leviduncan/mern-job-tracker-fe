@@ -7,7 +7,7 @@ const Register = () => {
   const navigate = useNavigate()
 
   const [formData, setFormData] = useState({
-    name: '',
+    username: '',
     email: '',
     password: ''
   });
@@ -21,7 +21,7 @@ const Register = () => {
 
     try {
       await axios.post('https://mern-job-tracker-be.cyclic.app/auth/register', formData);
-      navigate('/');
+      navigate('/login');
     } catch (error) {
       console.error(error);
       alert('Something went wrong!')
@@ -36,7 +36,7 @@ const Register = () => {
           Name:
           <input
             type="text"
-            name="name"
+            name="username"
             value={formData.name}
             onChange={handleChange}
           />

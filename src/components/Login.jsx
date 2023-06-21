@@ -20,7 +20,7 @@ const Login = () => {
 
     try {
       await axios.post('https://mern-job-tracker-be.cyclic.app/auth/login', formData); 
-      navigate('/');
+      navigate('/dashboard');
       
     } catch (error) {
       console.error(error);
